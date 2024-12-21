@@ -58,6 +58,7 @@ func getTask(w http.ResponseWriter, r *http.Request) {
 	data, err := json.Marshal(tasks[id])
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
 	}
 
 	w.Header().Set("Content-Type", "application/json")
